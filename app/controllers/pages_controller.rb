@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+          @poll = Poll.find(1)
   end
 
   def login

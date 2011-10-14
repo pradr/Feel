@@ -1,0 +1,4 @@
+<div> <%= @poll.question %> </div>
+<div> <%= @poll.clicks.count %> </div>
+<%= button_to @poll.option1 , :controller => 'clicks', :method => :post, :action => 'create', :poll_id => @poll.id, :option => 1%>
+<%= button_to @poll.option2 , :controller => 'clicks', :action => 'create', :poll_id => @poll.id, :option => 2%>

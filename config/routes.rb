@@ -1,10 +1,24 @@
 Feel::Application.routes.draw do
+
+
+  get "clicks/create"
+
+  resources :polls
+
   get "polls/new"
   get "polls/show"
   get "polls/create"
   get "polls/destroy"
 
   get "pages/home"
+
+
+  match 'clicks/create', :to =>'clicks#create'
+  resources :clicks do
+          collection do
+                  post :create
+          end
+  end
 
   match "/auth/:provider/callback" => "pages#login"
 
